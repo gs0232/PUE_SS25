@@ -1,6 +1,7 @@
 import streamlit as st
 from src.load_subject_data import load_subject_data, get_subject_names, get_subject_image
 from PIL import Image
+from src.analyze_hr_data import load_activity_data, set_max_hr, assign_zones, zone_time_and_power, plot_hr_data
 
 
 st.set_page_config(
@@ -34,7 +35,30 @@ st.session_state.current_subject = st.selectbox(
     options=name_list, key="sbSubject"
     )
 
-st.write(f"## {st.session_state.current_subject}")
+st.write(f"# {st.session_state.current_subject}")
 
 # Add images
 st.image(get_subject_image(st.session_state.current_subject), caption=st.session_state.current_subject)
+
+# Dataframe with subject data
+st.write("### Subject Data")
+
+max_hr_input = st.number_input(
+    "Gib deine maximale Herzfrequenz ein (in bpm):",
+    min_value=100,
+    max_value=250,
+    value=200,  # Standardwert
+    step=1
+)
+    
+#max_hr_input = int(max_hr_subject)    
+ACTIVITY_PATH = "data/activity.csv"
+df_subject = load_activity_data(ACTIVITY_PATH)
+#max_hr_subject = set_max_hr(df_subject["HeartRate"].max())
+max_hr_subject = set_max_hr(max_hr_input)
+df_subject, time_in_zones_subject = assign_zones(df_subject, max_hr_subject)
+
+st.table(zone_time_and_power(df_subject, time_in_zones_subject))
+
+# Plot the heart rate data
+st.plotly_chart(plot_hr_data(df_subject, max_hr_subject))

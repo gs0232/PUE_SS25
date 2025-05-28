@@ -39,3 +39,9 @@ __Use Case 1__ Die User Journey für die Diagnostiker:in wenn Sie einen Test aus
 ### Design
 
 Hier folgen erste Entwürfe eines UI Designs. Das Design ist für die Darstellung auf einem PC optimiert (Querformat). Keine separaten Frames.
+
+
+## Bneutzung
+
+` .\.venv\Scripts\activate`
+`streamlit run .\main.py`
