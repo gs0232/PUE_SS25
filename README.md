@@ -45,3 +45,9 @@ Hier folgen erste Entwürfe eines UI Designs. Das Design ist für die Darstellun
 
 ` .\.venv\Scripts\activate`
 `streamlit run .\main.py`
+
+## EKG-App Verwendung
+
+Der Proband wird ausgewählt und im Anschluss kann die maximale Herzfrequenz im Input-Feld eingegeben werden. Im Anschluss werden wird eine Tabelle mit Zonen und ein dazugehöriger Graph ausgegeben. Es wird __plotly__ benötigt um die HR-Daten Ploten zu können (`pdm add plotly`).
+
+![](docs/app_beispiel_1.png)
