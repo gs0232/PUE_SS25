@@ -54,16 +54,13 @@ Der Proband wird ausgewählt und im Anschluss kann die maximale Herzfrequenz im 
 
 ## Sakai Aufgabe 4 - Erstellen einer Power-Curve
 
-- Zum Installieren wird das Projekt gecloned
-- Im Terminal wird "pdm install" ausgeführt
-- Falls folgendes noch nie über pdm installiert wurde: 
-    - pdm add numpy
-    - pdm add pandas
-    - pdm add plotly.express
-    - plotly.express
-    - pdm add nbformat
+- Im Terminal wird folgendes ausgeführt
+    - "pdm add numpy"
+    - "pdm add pandas"
+    - "pdm add plotly.express"
+    - "pdm add nbformat"
 - Zum Starten des Projektes wird ein 'activity.csv' benötigt, welches dann mittels 'analyze_power.py' geplottet wird
-
+-für die Variable "FILE PATH", muss der Pfad der activity.csv angegeben werden, dieses wird dann über die Variable dem Argument der Funktion übergeben
 ![](power_curve_plot.png)
 
 
