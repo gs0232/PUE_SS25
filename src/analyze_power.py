@@ -28,7 +28,7 @@ def analyze_power(FILE_POWER, row_name):
 # %% Funktion zum Plotten der Power Curve
 def plot_power_curve(df_power_curve):
     fig = plx.line(df_power_curve, x="Time / min", y="Power / W", title="Power Curve")
-    fig.update_layout(xaxis_title="Time / min", yaxis_title="Power / W")
+    fig.update_layout(xaxis_title="Time / min", yaxis_title="Power / W",  xaxis=dict(tickmode="linear", dtick=5 ))
     return fig
 
 # %% Main-Ausführung
