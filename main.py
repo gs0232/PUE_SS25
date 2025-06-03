@@ -2,7 +2,7 @@ import streamlit as st
 from src.load_subject_data import load_subject_data, get_subject_names, get_subject_image
 from PIL import Image
 from src.analyze_hr_data import load_activity_data, set_max_hr, assign_zones, zone_time_and_power, plot_hr_data
-
+from src.find_peaks import find_peaks, plot_peaks
 
 st.set_page_config(
     page_title="EKG App",
@@ -62,3 +62,11 @@ st.table(zone_time_and_power(df_subject, time_in_zones_subject))
 
 # Plot the heart rate data
 st.plotly_chart(plot_hr_data(df_subject, max_hr_subject))
+
+# Display the EKG data
+st.write("### EKG Data")
+EKG_PATH = "data/ekg_data/01_Ruhe.txt"
+ekg_indices_peaks = find_peaks(EKG_PATH, "Voltage / mV")
+st.plotly_chart(plot_peaks(EKG_PATH, "Voltage / mV", ekg_indices_peaks, 5000))
+
+
