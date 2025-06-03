@@ -1,0 +1,9 @@
+Adding packages to default dependencies: nbformat
+  0:00:29 🔒 Lock successful.  
+Changes are written to pyproject.toml.
+Synchronizing working set with resolved packages: 2 to add, 0 to update, 0 to remove
+
+  ✔ Install fastjsonschema 2.21.1 successful
+  ✔ Install nbformat 5.10.4 successful
+
+  0:00:00 🎉 All complete! 2/2
