@@ -60,7 +60,8 @@ Der Proband wird ausgewählt und im Anschluss kann die maximale Herzfrequenz im 
     - "pdm add plotly.express"
     - "pdm add nbformat"
 - Zum Starten des Projektes wird ein 'activity.csv' benötigt, welches dann mittels 'analyze_power.py' geplottet wird
--für die Variable "FILE PATH", muss der Pfad der activity.csv angegeben werden, dieses wird dann über die Variable dem Argument der Funktion übergeben
+-für die Variable "FILE PATH", muss der Pfad der activity.csv angegeben werden. Dieses wird dann über die Variable dem Argument der Funktion übergeben
+
 ![](power_curve_plot.png)
 
 
