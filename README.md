@@ -51,3 +51,19 @@ Hier folgen erste Entwürfe eines UI Designs. Das Design ist für die Darstellun
 Der Proband wird ausgewählt und im Anschluss kann die maximale Herzfrequenz im Input-Feld eingegeben werden. Im Anschluss werden wird eine Tabelle mit Zonen und ein dazugehöriger Graph ausgegeben. Es wird __plotly__ benötigt um die HR-Daten Ploten zu können (`pdm add plotly`).
 
 ![](docs/app_beispiel_1.png)
+
+## Sakai Aufgabe 4 - Erstellen einer Power-Curve
+
+- Zum Installieren wird das Projekt gecloned
+- Im Terminal wird "pdm install" ausgeführt
+- Falls folgendes noch nie über pdm installiert wurde: 
+    - pdm add numpy
+    - pdm add pandas
+    - pdm add plotly.express
+    - plotly.express
+    - pdm add nbformat
+- Zum Starten des Projektes wird ein 'activity.csv' benötigt, welches dann mittels 'analyze_power.py' geplottet wird
+
+![](power_curve_plot.png)
+
+
