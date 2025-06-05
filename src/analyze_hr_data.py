@@ -50,7 +50,6 @@ def assign_zones(df1, hr_zones):
                 current_zone.append(zone)
                 break  # Stop after finding the first matching zone
 
-    print(current_zone)
     df1["Zone"] = current_zone  # Add the zones to the dataframe
     df1_zone_mean = df1.groupby("Zone").mean()
 

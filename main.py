@@ -16,10 +16,12 @@ if "current_subject" not in st.session_state:
     current_subject = "No subject selected"
 
 # Import name list
-FILE_PATH = "data/person_db.json"
+SUBJECT_PATH = "data/person_db.json"
 
-user_data = load_subject_data(FILE_PATH)
-name_list = get_subject_names(user_data)
+user_data = load_subject_data(SUBJECT_PATH)
+name_list = []
+for person in user_data:
+    name_list.append(person.firstname + " " + person.lastname)
 print(name_list)
 
 # A header for the first layer
@@ -38,7 +40,7 @@ st.session_state.current_subject = st.selectbox(
 st.write(f"# {st.session_state.current_subject}")
 
 # Add images
-st.image(get_subject_image(st.session_state.current_subject), caption=st.session_state.current_subject)
+st.image(get_subject_image(user_data, st.session_state.current_subject), caption=st.session_state.current_subject)
 
 # Dataframe with subject data
 st.write("### Subject Data")
